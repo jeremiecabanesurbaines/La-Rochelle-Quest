@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Escape Game - Étape 1</title>
+    <title>Escape Game - Question Test</title>
     <style>
         /* Charte graphique */
         body {
@@ -43,6 +43,15 @@
         /* Masquer les sections non débloquées */
         .hidden {
             display: none;
+        }
+
+        /* Sous-titre Question test */
+        h3 {
+            color: #555;
+            font-weight: normal;
+            font-style: italic;
+            margin-top: -15px;
+            margin-bottom: 25px;
         }
 
         /* Champs de saisie et boutons */
@@ -86,21 +95,20 @@
             display: none;
             margin-top: 10px;
         }
-
-        /* Conteneur vidéo YouTube Portrait (9:16) */
-        .video-container {
-            position: relative;
-            width: 100%;
-            max-width: 350px;
-            margin: 0 auto;
-            aspect-ratio: 9 / 16;
+        
+        /* Textes d'énigme et d'indice */
+        .texte-enigme {
+            font-size: 18px;
+            line-height: 1.5;
+            padding: 10px 20px;
         }
 
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-            border-radius: 8px;
+        .texte-indice {
+            font-size: 18px;
+            font-weight: bold;
+            color: #005b9f;
+            line-height: 1.5;
+            margin-bottom: 20px;
         }
     </style>
 </head>
@@ -108,11 +116,12 @@
 
     <div class="container">
         <!-- LOGO -->
-        <img src="CREPEAU.png" alt="Logo de l'étape" id="logo">
+        <img src="GENERIQUE.png" alt="Logo de l'étape" id="logo">
 
         <!-- PARTIE QUESTION -->
         <div id="section-question" class="section">
             <h2>Question d’observation</h2>
+            <h3>Question test</h3>
             <img src="Entree_vieux_port_La_Rochelle.JPG" alt="Photo de la question">
             <p>Combien de tours compte le Vieux-Port de La Rochelle ?</p>
             
@@ -125,7 +134,7 @@
         <div id="section-enigme" class="section hidden">
             <hr>
             <h2>Énigme</h2>
-            <img src="Enigme-Crepeau.png" alt="Image de l'énigme">
+            <p class="texte-enigme">Quel jour vient après jeudi ?</p>
             <br>
             <input type="text" id="reponse-enigme" placeholder="Saisissez votre réponse">
             <button id="btn-enigme" onclick="validerEnigme()">Valider</button>
@@ -136,10 +145,8 @@
         <div id="section-indice" class="section hidden">
             <hr>
             <h2>Indice</h2>
-            <div class="video-container">
-                <!-- L'URL de la vidéo sera injectée en JS pour forcer l'autoplay au clic -->
-                <iframe id="video-indice" allow="autoplay; fullscreen" allowfullscreen></iframe>
-            </div>
+            <p class="texte-indice">Voici votre premier indice, conservez-le, il vous sera utile pour retrouver l’évènement sur lequel vous enquêtez !</p>
+            <img src="Indice-6-duperre.png" alt="Indice Image">
         </div>
     </div>
 
@@ -180,8 +187,8 @@
             const reponsePropre = formaterReponse(saisie);
             const erreur = document.getElementById("erreur-enigme");
 
-            // Vérification (vélo -> velo sans accent)
-            if (reponsePropre === "velo") {
+            // Vérification ("vendredi")
+            if (reponsePropre === "vendredi") {
                 erreur.style.display = "none";
                 
                 // On affiche la partie indice
@@ -191,21 +198,7 @@
                 document.getElementById("reponse-enigme").disabled = true;
                 document.getElementById("btn-enigme").disabled = true;
 
-                // Lancement de la vidéo YouTube (ID: uxb_qi-C79k)
-                const iframe = document.getElementById("video-indice");
-                // On ajoute autoplay=1 dans l'URL. Le paramètre rel=0 empêche de suggérer des vidéos d'autres chaînes à la fin.
-                iframe.src = "https://www.youtube.com/embed/uxb_qi-C79k?autoplay=1&rel=0";
-
-                // Requête de passage en plein écran
-                if (iframe.requestFullscreen) {
-                    iframe.requestFullscreen();
-                } else if (iframe.webkitRequestFullscreen) { /* Safari / Chrome */
-                    iframe.webkitRequestFullscreen();
-                } else if (iframe.msRequestFullscreen) { /* IE11 */
-                    iframe.msRequestFullscreen();
-                }
-
-                // Scroll doux vers la vidéo
+                // Scroll doux vers l'indice
                 document.getElementById("section-indice").scrollIntoView({ behavior: 'smooth' });
             } else {
                 erreur.style.display = "block";
