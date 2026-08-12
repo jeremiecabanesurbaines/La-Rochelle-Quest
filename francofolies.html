@@ -87,10 +87,18 @@
 
         /* --- Contrôles Audio --- */
         .audio-controls {
-            margin-bottom: 25px;
+            margin-bottom: 10px;
             display: flex;
             justify-content: center;
-            gap: 10px;
+            gap: 15px;
+        }
+        
+        .audio-subtext {
+            font-size: 0.85rem;
+            font-style: italic;
+            margin-top: 0;
+            margin-bottom: 25px;
+            color: #e0e0e0;
         }
 
         input[type="text"] {
@@ -119,7 +127,7 @@
 
         button {
             font-family: "American Typewriter", "Courier New", Courier, serif;
-            font-size: 1rem;
+            font-size: 1.1rem;
             font-weight: bold;
             padding: 10px 20px;
             background-color: #3a2e24; 
@@ -128,6 +136,10 @@
             border-radius: 4px;
             cursor: pointer;
             transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 60px;
         }
 
         button:hover {
@@ -242,9 +254,10 @@
             <audio id="audio-enigme" src="Au-clair-de-la-lune.mp3"></audio>
             
             <div class="audio-controls">
-                <button id="btn-lecture" onclick="jouerAudio()">Lecture</button>
-                <button id="btn-pause" onclick="pauseAudio()">Pause</button>
+                <button id="btn-lecture" onclick="jouerAudio()" title="Lecture">&#9654;</button>
+                <button id="btn-pause" onclick="pauseAudio()" title="Pause">&#10074;&#10074;</button>
             </div>
+            <p class="audio-subtext">Vos yeux ne suffiront pas ici. Mettez le son.</p>
 
             <div class="input-group">
                 <input type="text" id="reponse-input" placeholder="Saisissez votre réponse">
