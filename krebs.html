@@ -65,16 +65,17 @@
             margin-bottom: 20px;
         }
 
-        /* --- Animation "Explosion" pour SEL --- */
+        /* --- Animation "Explosion" adoucie pour SEL --- */
         @keyframes explosion {
             0% { transform: scale(1); opacity: 1; color: #ff0000; }
-            50% { transform: scale(1.5); opacity: 0.8; color: #ffaa00; }
+            50% { transform: scale(1.2); opacity: 0.9; color: #ffaa00; }
             100% { transform: scale(1); opacity: 1; color: #ffffff; }
         }
 
         .effet-explosion {
             display: inline-block;
             font-weight: bold;
+            padding: 0 4px; /* Ajoute un petit espace de sécurité autour du mot */
             animation: explosion 1.5s infinite;
         }
 
