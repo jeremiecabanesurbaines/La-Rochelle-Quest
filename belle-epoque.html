@@ -7,6 +7,7 @@
     <style>
         body {
             font-family: "American Typewriter", "Courier New", Courier, serif;
+            /* Fond Étape 1 : Effet papier ancien */
             background-color: #f4ebd8;
             background-image: radial-gradient(circle at center, #fdf6e3 0%, #e6d5b8 100%);
             color: #3a2e24; 
@@ -21,6 +22,7 @@
             transition: background 0.5s ease, color 0.5s ease;
         }
 
+        /* --- CLASSE DYNAMIQUE POUR L'ÉTAPE 2 (Fond vert militaire #2B4A3F) --- */
         body.etape2 {
             background-color: #2B4A3F !important;
             background-image: none !important;
@@ -38,6 +40,7 @@
             margin-bottom: 20px;
         }
 
+        /* --- Titres --- */
         .titre-epreuve {
             font-size: 1.8rem;
             font-weight: bold;
@@ -184,7 +187,7 @@
         <!-- ================= ÉTAPE 1 ================= -->
         <div id="zone-observation">
             <p class="enigme-texte fw-regular">Combien de tours marquent l'entrée du Vieux-Port de La Rochelle ?</p>
-            <img src="Entree_vieux_port_La_Rochelle.JPG" alt="Vieux-Port de La Rochelle" class="visuel-enigme">
+            <img src="Entree_vieux_port_La_Rechelle.JPG" alt="Vieux-Port de La Rochelle" class="visuel-enigme">
             <div class="input-group">
                 <input type="text" id="observation-input" placeholder="Votre réponse">
                 <br>
@@ -195,9 +198,7 @@
         <!-- ================= ÉTAPE 2 ================= -->
         <div id="zone-enigme-texte" style="display: none;">
             <p class="enigme-texte fw-regular">Un bon journaliste observe analyse ses sources dans ses moindres détails. Il sait également les transcrire pour mieux les utiliser.</p>
-            
             <img src="belle-epoque-code.png" alt="Code Belle Époque" class="image-reduite">
-
             <div class="input-group">
                 <input type="text" id="reponse-input" placeholder="Saisissez votre réponse">
                 <br>
@@ -264,7 +265,8 @@
                 document.querySelector(".titre-epreuve").style.display = "none";
 
                 const iframe = document.getElementById("video-indice");
-                iframe.src = "https://www.youtube.com/embed/8DuZ_kNLiU8?autoplay=1&rel=0&cc_load_policy=0&iv_load_policy=3";
+                // Mise à jour vers la nouvelle vidéo demandée
+                iframe.src = "https://www.youtube.com/embed/xVncazpMk5k?autoplay=1&rel=0&cc_load_policy=0&iv_load_policy=3";
 
                 if (iframe.requestFullscreen) iframe.requestFullscreen();
                 else if (iframe.webkitRequestFullscreen) iframe.webkitRequestFullscreen();
