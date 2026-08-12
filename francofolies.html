@@ -83,6 +83,7 @@
 
         .input-group {
             margin-bottom: 20px;
+            text-align: center;
         }
 
         /* --- Contrôles Audio --- */
@@ -136,7 +137,7 @@
             border-radius: 4px;
             cursor: pointer;
             transition: all 0.3s ease;
-            display: flex;
+            display: inline-flex; /* CORRECTION ICI : inline-flex au lieu de flex permet le centrage */
             align-items: center;
             justify-content: center;
             min-width: 60px;
