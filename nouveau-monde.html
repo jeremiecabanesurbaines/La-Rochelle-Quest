@@ -96,6 +96,17 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.15); 
         }
 
+        /* --- Style spécifique pour réduire l'image des cercles --- */
+        .image-reduite {
+            max-width: 250px; /* Taille réduite ajustable si besoin */
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto 20px auto; /* Centrage automatique */
+            border-radius: 4px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
         .fw-light { font-weight: 300; }
         .fw-regular { font-weight: 400; }
         .fw-bold { font-weight: bold; }
@@ -254,8 +265,8 @@
             
             <p class="enigme-texte fw-regular">Pour trouver un indice, il faut savoir <span class="effet-plier">se plier en 4</span> !</p>
             
-            <!-- Ajout de l'image de l'énigme centrée -->
-            <img src="ordre-cercles.png" alt="Ordre des cercles" class="visuel-enigme">
+            <!-- Image des cercles avec taille réduite et centrée -->
+            <img src="ordre-cercles.png" alt="Ordre des cercles" class="image-reduite">
 
             <div class="input-group">
                 <input type="text" id="reponse-input" placeholder="Saisissez votre réponse">
