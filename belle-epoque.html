@@ -68,11 +68,14 @@
             margin-bottom: 20px;
         }
 
+        /* Taille réduite à max-width: 250px et centrée */
         .visuel-enigme {
-            max-width: 100%;
+            max-width: 250px;
+            width: 100%;
             height: auto;
             border-radius: 4px;
-            margin-bottom: 20px;
+            margin: 0 auto 20px auto;
+            display: block;
             box-shadow: 0 4px 10px rgba(0,0,0,0.15); 
         }
 
@@ -186,8 +189,8 @@
 
         <!-- ================= ÉTAPE 1 ================= -->
         <div id="zone-observation">
-            <p class="enigme-texte fw-regular">Combien de tours marquent l'entrée du Vieux-Port de La Rochelle ?</p>
-            <img src="Entree_vieux_port_La_Rochelle.JPG" alt="Vieux-Port de La Rochelle" class="visuel-enigme">
+            <p class="enigme-texte fw-regular">Une villa Belle-Epoque remarquable !</p>
+            <img src="10-le-mail.png" alt="Le Mail" class="visuel-enigme">
             <div class="input-group">
                 <input type="text" id="observation-input" placeholder="Votre réponse">
                 <br>
@@ -221,7 +224,7 @@
 
     <script>
         let tentativesRestantes = 4;
-        const reponsesObservationAcceptees = ["2", "deux"];
+        const reponsesObservationAcceptees = ["chalet"];
         const reponsesEnigmeAcceptees = ["8712"]; 
 
         function formaterReponse(texte) {
