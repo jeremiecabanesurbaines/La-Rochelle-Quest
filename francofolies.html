@@ -137,7 +137,7 @@
             border-radius: 4px;
             cursor: pointer;
             transition: all 0.3s ease;
-            display: inline-flex; /* CORRECTION ICI : inline-flex au lieu de flex permet le centrage */
+            display: inline-flex;
             align-items: center;
             justify-content: center;
             min-width: 60px;
@@ -236,8 +236,8 @@
 
         <!-- ================= ÉTAPE 1 : OBSERVATION ================= -->
         <div id="zone-observation">
-            <p class="enigme-texte fw-regular">Combien de tours marquent l'entrée du Vieux-Port de La Rochelle ?</p>
-            <img src="Entree_vieux_port_La_Rochelle.JPG" alt="Vieux-Port de La Rochelle" class="visuel-enigme">
+            <p class="enigme-texte fw-regular">Qui est l'artiste ?</p>
+            <img src="3-rue-saint-nicolas.png" alt="Rue Saint-Nicolas" class="visuel-enigme">
             
             <div class="input-group">
                 <input type="text" id="observation-input" placeholder="Votre réponse">
@@ -288,7 +288,7 @@
         let tentativesRestantes = 4;
         
         // Réponses acceptées pour l'étape 1
-        const reponsesObservationAcceptees = ["2", "deux"];
+        const reponsesObservationAcceptees = ["botero pop", "boteropop", "botero-pop"];
         
         // Réponse acceptée pour l'étape 2 
         const reponsesEnigmeAcceptees = ["260"]; 
