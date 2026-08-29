@@ -89,10 +89,12 @@
         }
 
         .visuel-enigme {
-            max-width: 100%;
+            max-width: 250px;
+            width: 100%;
             height: auto;
             border-radius: 4px;
-            margin-bottom: 20px;
+            margin: 0 auto 20px auto;
+            display: block;
             box-shadow: 0 4px 10px rgba(0,0,0,0.15); 
         }
 
@@ -250,8 +252,8 @@
 
         <!-- ================= ÉTAPE 1 : OBSERVATION ================= -->
         <div id="zone-observation">
-            <p class="enigme-texte fw-regular">Combien de tours marquent l'entrée du Vieux-Port de La Rochelle ?</p>
-            <img src="Entree_vieux_port_La_Rochelle.JPG" alt="Vieux-Port de La Rochelle" class="visuel-enigme">
+            <p class="enigme-texte fw-regular">Un nombre manque …</p>
+            <img src="7-rue-escale.png" alt="Rue de l'Escale" class="visuel-enigme">
             
             <div class="input-group">
                 <input type="text" id="observation-input" placeholder="Votre réponse">
@@ -296,14 +298,14 @@
         let tentativesRestantes = 4;
         
         // Réponses acceptées pour l'étape 1
-        const reponsesObservationAcceptees = ["2", "deux"];
+        const reponsesObservationAcceptees = ["26", "vingt six", "vingt-six"];
         
         // Réponses acceptées pour l'étape 2 
         const reponsesEnigmeAcceptees = ["361"]; 
 
         // Fonction de nettoyage du texte (enlève les majuscules, les espaces en trop et les accents)
         function formaterReponse(texte) {
-            return texte.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim();
+            return texte.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/-/g, " ").toLowerCase().trim();
         }
 
         // Fonction pour valider la première étape d'observation
@@ -318,7 +320,7 @@
             if (reponseJoueur === "") return;
 
             // Vérifie si la réponse du joueur est dans la liste des réponses acceptées
-            if (reponsesObservationAcceptees.includes(reponseJoueur)) {
+            if (reponsesObservationAcceptees.some(r => formaterReponse(r) === reponseJoueur)) {
                 // Succès étape 1 -> Passage à l'étape 2
                 document.getElementById("zone-observation").style.display = "none";
                 document.getElementById("zone-enigme-texte").style.display = "block";
