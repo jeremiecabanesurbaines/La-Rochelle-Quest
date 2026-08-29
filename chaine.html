@@ -1,12 +1,3 @@
-Modification code :
-1- change la photo "Entree_vieux_port_La_Rochelle.JPG" par "8-place-de-la-chaine.png"
-2- change la taille de l'image avec max-width: 250px;
-2- change le texte "Combien de tours marquent l'entrée du Vieux-Port de La Rochelle ?" Par "Ça se déchaine …."
-3- modifie la réponse à cette question (ligne 260) par "interdisait"
-
-
-
-Code à modifier :
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -99,11 +90,14 @@ Code à modifier :
             display: block;
         }
 
+        /* Taille réduite à max-width: 250px et centrée */
         .visuel-enigme {
-            max-width: 100%;
+            max-width: 250px;
+            width: 100%;
             height: auto;
             border-radius: 4px;
-            margin-bottom: 20px;
+            margin: 0 auto 20px auto;
+            display: block;
             box-shadow: 0 4px 10px rgba(0,0,0,0.15); 
         }
 
@@ -206,8 +200,8 @@ Code à modifier :
 
         <!-- ================= ÉTAPE 1 : OBSERVATION ================= -->
         <div id="zone-observation">
-            <p class="enigme-texte fw-regular">Combien de tours marquent l'entrée du Vieux-Port de La Rochelle ?</p>
-            <img src="Entree_vieux_port_La_Rochelle.JPG" alt="Vieux-Port de La Rochelle" class="visuel-enigme">
+            <p class="enigme-texte fw-regular">Ça se déchaine ….</p>
+            <img src="8-place-de-la-chaine.png" alt="Place de la Chaîne" class="visuel-enigme">
             <div class="input-group">
                 <input type="text" id="observation-input" placeholder="Votre réponse">
                 <br>
@@ -242,7 +236,7 @@ Code à modifier :
 
     <script>
         let tentativesRestantes = 4;
-        const reponsesObservationAcceptees = ["2", "deux"];
+        const reponsesObservationAcceptees = ["interdisait"];
         const reponsesEnigmeAcceptees = ["vague"]; 
 
         function formaterReponse(texte) {
