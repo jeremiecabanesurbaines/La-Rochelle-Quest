@@ -69,11 +69,14 @@
             margin-bottom: 20px;
         }
 
+        /* Style de l'image ajusté à max-width: 250px */
         .visuel-enigme {
-            max-width: 100%;
+            max-width: 250px;
+            width: 100%;
             height: auto;
             border-radius: 4px;
-            margin-bottom: 20px;
+            margin: 0 auto 20px auto;
+            display: block;
             box-shadow: 0 4px 10px rgba(0,0,0,0.15); 
         }
 
@@ -220,8 +223,8 @@
 
         <!-- ================= ÉTAPE 1 : OBSERVATION ================= -->
         <div id="zone-observation">
-            <p class="enigme-texte fw-regular">Combien de tours marquent l'entrée du Vieux-Port de La Rochelle ?</p>
-            <img src="Entree_vieux_port_La_Rochelle.JPG" alt="Vieux-Port de La Rochelle" class="visuel-enigme">
+            <p class="enigme-texte fw-regular">Qu'est-ce qui a été "réformée" ?</p>
+            <img src="4-temple-protestant.png" alt="Temple Protestant" class="visuel-enigme">
             
             <div class="input-group">
                 <input type="text" id="observation-input" placeholder="Votre réponse">
@@ -263,7 +266,7 @@
         let tentativesRestantes = 4;
         
         // Réponses acceptées pour l'étape 1
-        const reponsesObservationAcceptees = ["2", "deux"];
+        const reponsesObservationAcceptees = ["confession"];
         
         // Réponse acceptée pour l'étape 2 
         const reponsesEnigmeAcceptees = ["luther"]; 
