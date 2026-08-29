@@ -215,8 +215,8 @@
 
         <!-- ================= ÉTAPE 1 : OBSERVATION ================= -->
         <div id="zone-observation">
-            <p class="enigme-texte fw-regular">Combien de tours marquent l'entrée du Vieux-Port de La Rochelle ?</p>
-            <img src="Entree_vieux_port_La_Rochelle.JPG" alt="Vieux-Port de La Rochelle" class="visuel-enigme">
+            <p class="enigme-texte fw-regular">Quel nombre a été emporté par les vents ?</p>
+            <img src="1-michel-crepeau.png" alt="Michel Crépeau" class="visuel-enigme">
             
             <div class="input-group">
                 <input type="text" id="observation-input" placeholder="Votre réponse">
@@ -257,14 +257,14 @@
         let tentativesRestantes = 4;
         
         // Réponses acceptées pour l'étape 1
-        const reponsesObservationAcceptees = ["2", "deux"];
+        const reponsesObservationAcceptees = ["17", "dix sept", "dix-sept"];
         
         // Réponse acceptée pour l'étape 2 (sans accent et en minuscule)
         const reponsesEnigmeAcceptees = ["velo"]; 
 
         // Fonction de nettoyage du texte (enlève les majuscules, les espaces en trop et les accents)
         function formaterReponse(texte) {
-            return texte.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim();
+            return texte.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/-/g, " ").toLowerCase().trim();
         }
 
         // Fonction pour valider la première étape d'observation
@@ -279,7 +279,7 @@
             if (reponseJoueur === "") return;
 
             // Vérifie si la réponse du joueur est dans la liste des réponses acceptées
-            if (reponsesObservationAcceptees.includes(reponseJoueur)) {
+            if (reponsesObservationAcceptees.some(r => formaterReponse(r) === reponseJoueur)) {
                 // Succès étape 1 -> Passage à l'étape 2
                 document.getElementById("zone-observation").style.display = "none";
                 document.getElementById("zone-enigme-texte").style.display = "block";
@@ -325,7 +325,7 @@
 
                 // Lancement de la vidéo YouTube (ID: uxb_qi-C79k) en plein écran
                 const iframe = document.getElementById("video-indice");
-               iframe.src = "https://www.youtube.com/embed/uxb_qi-C79k?autoplay=1&rel=0&cc_load_policy=0&iv_load_policy=3";
+                iframe.src = "https://www.youtube.com/embed/uxb_qi-C79k?autoplay=1&rel=0&cc_load_policy=0&iv_load_policy=3";
 
                 // Requête de passage en plein écran
                 if (iframe.requestFullscreen) {
